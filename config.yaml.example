@@ -1,0 +1,12 @@
+app:
+  database_url: sqlite:///./test_case_repo.db
+  debug: false
+  host: 0.0.0.0
+  port: 8000
+jira:
+  api_token: 'YOUR_JIRA_API_TOKEN'
+  server_url: 'https://your-domain.atlassian.net'
+  username: 'your-username'
+lark:
+  app_id: 'YOUR_LARK_APP_ID'
+  app_secret: 'YOUR_LARK_APP_SECRET'
