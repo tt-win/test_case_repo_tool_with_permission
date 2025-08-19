@@ -1,27 +1,35 @@
 # 專案開發任務清單 (Project Task Breakdown)
 
-## 階段一：專案基礎設定 (Phase 1: Project Foundation)
+## 階段一：專案基礎設定 (Phase 1: Project Foundation) ✅ 已完成
 
-- [ ] 建立 Python 虛擬環境
-- [ ] 根據 `requirements.txt` 安裝所有相依套件
-- [ ] 初始化 Git 版本控制
-- [ ] 在 `app/main.py` 中設定一個基本的 "Hello World" FastAPI 應用
-- [ ] 在 `app/database.py` 中完成 SQLite 資料庫的連線設定
-- [ ] 在 `app/config.py` 中設定讀取 `config.yaml` 設定檔的功能
+- [x] 建立 Python 虛擬環境
+- [x] 根據 `requirements.txt` 安裝所有相依套件
+- [x] 初始化 Git 版本控制
+- [x] 在 `app/main.py` 中設定一個基本的 "Hello World" FastAPI 應用
+- [x] 在 `app/database.py` 中完成 SQLite 資料庫的連線設定
+- [x] 在 `app/config.py` 中設定讀取 `config.yaml` 設定檔的功能
 
-## 階段二：後端核心功能 (Phase 2: Backend Core)
+## 階段二：後端核心功能 (Phase 2: Backend Core) 🔄 部分完成
 
 ### 2.1 資料模型 (Data Models)
 - [ ] 在 `app/models/` 目錄下，為 Team, TestCase, TestRun 定義 Pydantic 資料模型
 
-### 2.2 服務層 (Services)
-- [ ] **Lark Client** (`app/services/lark_client.py`)
-    - [ ] 實作認證機制
-    - [ ] 實作讀取 Lark 多維表格的功能
-    - [ ] 實作寫入 Lark 多維表格的功能
-- [ ] **JIRA Client** (`app/services/jira_client.py`)
-    - [ ] 實作認證機制
-    - [ ] 實作新增 JIRA Bug 連結的功能
+### 2.2 服務層 (Services) ✅ 已完成
+- [x] **Lark Client** (`app/services/lark_client.py`)
+    - [x] 實作認證機制
+    - [x] 實作讀取 Lark 多維表格的功能
+    - [x] 實作寫入 Lark 多維表格的功能
+    - [x] 實作批次操作功能
+    - [x] 實作表格欄位管理
+    - [x] 實作 Wiki Token 解析
+- [x] **JIRA Client** (`app/services/jira_client.py`)
+    - [x] 實作認證機制
+    - [x] 實作 Issue 查詢功能 (JQL 支援)
+    - [x] 實作 Issue 創建功能
+    - [x] 實作 Issue 更新功能
+    - [x] 實作評論管理功能
+    - [x] 實作專案管理功能
+    - [x] 實作從測試結果創建 Bug 功能
 
 ### 2.3 資料庫
 - [ ] 建立初始的資料庫結構 (Schema/Tables)
@@ -72,7 +80,26 @@
 
 ## 階段五：測試與完成 (Phase 5: Testing & Finalization)
 
-- [ ] 為 Services 撰寫單元測試 (`tests/test_clients.py`)
+- [x] 為 Lark Client 撰寫測試並驗證 (已通過實際 Lark 表格測試)
+- [x] 為 JIRA Client 撰寫測試並驗證 (已通過實際 JIRA 伺服器測試)
 - [ ] 為 API Endpoints 撰寫整合測試 (`tests/test_api.py`)
 - [ ] 撰寫 `README.md`，包含完整的專案設定與執行說明
 - [ ] 最終程式碼審查與清理
+
+## 📊 專案進度總覽
+
+### ✅ 已完成
+- **專案基礎設定**: FastAPI 應用、資料庫連線、YAML 設定檔管理
+- **Lark 整合**: 完整的多維表格 CRUD 操作，支援批次處理
+- **JIRA 整合**: 完整的 Issue 管理，支援 JQL 查詢和 Bug 報告
+
+### 🔄 進行中  
+- **資料模型定義**: Team, TestCase, TestRun 模型
+
+### ⏳ 待完成
+- **後端 API**: RESTful API 開發
+- **前端介面**: HTML 模板和 JavaScript 互動
+- **整合測試**: API 端點測試
+
+### 🎯 下一步建議
+建議繼續開發資料模型 (Phase 2.1) 作為後續 API 開發的基礎。
