@@ -25,9 +25,9 @@ class Settings(BaseModel):
     jira: JiraConfig = JiraConfig()
 
 def load_config(config_path: str = "config.yaml") -> Settings:
-    """�� YAML -��"""
+    """讀取 YAML 設定檔"""
     if not os.path.exists(config_path):
-        # ��-��X(޳--�
+        # 如果設定檔不存在，回傳預設設定
         return Settings()
     
     with open(config_path, 'r', encoding='utf-8') as file:
@@ -36,7 +36,7 @@ def load_config(config_path: str = "config.yaml") -> Settings:
     return Settings(**config_data)
 
 def create_default_config(config_path: str = "config.yaml") -> None:
-    """��--��"""
+    """建立預設設定檔"""
     default_config = {
         "app": {
             "debug": False,
@@ -59,5 +59,5 @@ def create_default_config(config_path: str = "config.yaml") -> None:
     with open(config_path, 'w', encoding='utf-8') as file:
         yaml.dump(default_config, file, default_flow_style=False, allow_unicode=True)
 
-# h�-��
+# 全域設定實例
 settings = load_config()
