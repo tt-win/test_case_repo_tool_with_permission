@@ -6,7 +6,6 @@ from pydantic import BaseModel
 class LarkConfig(BaseModel):
     app_id: str = ""
     app_secret: str = ""
-    tenant_token: str = ""
 
 class JiraConfig(BaseModel):
     server_url: str = ""
@@ -46,8 +45,7 @@ def create_default_config(config_path: str = "config.yaml") -> None:
         },
         "lark": {
             "app_id": "",
-            "app_secret": "",
-            "tenant_token": ""
+            "app_secret": ""
         },
         "jira": {
             "server_url": "",
